@@ -1,0 +1,29 @@
+import React, { useState } from "react";
+
+const ProductAction = (props) => {
+  const [action, setAction] = useState("Add to Cart");
+
+  return (
+    <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+      <div className="text-center">
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+
+            if (action === "Add to Cart") {
+              setAction("Remove from Cart");
+            } else {
+              setAction("Add to Cart");
+            }
+          }}
+          className="btn btn-outline-dark mt-auto"
+          href="index.html"
+        >
+          {action}
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default ProductAction;
