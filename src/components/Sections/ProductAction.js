@@ -10,10 +10,12 @@ const ProductAction = (props) => {
           onClick={(e) => {
             e.preventDefault();
 
-            if (action === "Add to Cart") {
-              setAction("Remove from Cart");
-            } else {
-              setAction("Add to Cart");
+           
+            {
+              action === "Add to Cart" && setAction("Remove from Cart");
+            }
+            {
+              action !== "Add to Cart" && setAction("Add to Cart");
             }
           }}
           className="btn btn-outline-dark mt-auto"
